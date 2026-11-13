@@ -1,0 +1,2 @@
+.cartao { flex: 1; min-width: 150px; background: var(--green-soft); padding: 15px; border-radius: 8px; }
+.valor { margin: 5px 0; color: var(--green); }

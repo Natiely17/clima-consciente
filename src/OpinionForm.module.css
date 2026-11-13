@@ -1,0 +1,5 @@
+.resposta { display: block; margin: 12px 0; }
+.resposta input, .nota input { margin-right: 8px; }
+.nota { display: inline-block; margin: 10px; }
+.mensagem { background: var(--green-soft); padding: 12px; border-radius: 7px; }
+.textarea { width: 100%; }

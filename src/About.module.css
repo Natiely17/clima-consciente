@@ -1,0 +1,2 @@
+.destaque { color: var(--green); font-weight: 700; }
+.aviso { background: var(--green-soft); padding: 12px; border-radius: 7px; }
