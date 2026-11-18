@@ -1,33 +1,138 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap');
+
 :root {
   font-family: 'DM Sans', Arial, sans-serif;
-  color: #202b25;
-  background: #f4f7f1;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #202b25;
-  --muted: #718078;
-  --green: #36745a;
-  --green-dark: #24563f;
-  --green-soft: #e8f1e9;
-  --line: #e1e9e0;
-  --paper: #fff;
-  --page: #f4f7f1;
-  --gold: #e4a64b;
 }
+
+
+
+/* TEMA CLARO */
+[data-tema="claro"] {
+  --ink: #202b25;
+  --muted: #607568;
+  --green: #3c885e;
+  --green-dark: #286b46;
+  --green-soft: #e6f2e9;
+  --line: #cbdccd;
+  --paper: #ffffff;
+  --page: #f4f7f1;
+  --gold: #d49b32;
+
+  background: var(--page);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* Caixa do formulário */
+[data-tema="claro"] form {
+  max-width: 780px;
+  margin: 25px auto;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+/* Botões */
+[data-tema="claro"] button {
+  background: var(--green);
+  color: white;
+  border: 1px solid var(--green);
+  border-radius: 7px;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+
+[data-tema="claro"] button:hover {
+  background: var(--green-dark);
+}
+
+/* Campos de resposta */
+[data-tema="claro"] textarea,
+[data-tema="claro"] input:not([type="radio"]):not([type="checkbox"]) {
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+/* Cores dos textos */
+[data-tema="claro"] h1,
+[data-tema="claro"] h2,
+[data-tema="claro"] h3 {
+  color: var(--green);
+}
+
+[data-tema="claro"] input {
+  accent-color: var(--green);
+}
+
+
+
+/* Tema escuro: utiliza azul nos destaques */
+[data-tema="escuro"] {
+  min-height: 100vh;
+  color: #e8f0fb;
+  background: #101a2b;
+
+  --ink: #e8f0fb;
+  --muted: #aab9ce;
+  --green: #63a8ff;
+  --green-dark: #3988e8;
+  --green-soft: #1b2d47;
+  --line: #30445f;
+  --paper: #17243a;
+  --page: #101a2b;
+  --gold: #8fc2ff;
+}
+
+
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; }
+body { margin: 0; min-width: 320px; background: var(--page); }
 button, input, textarea { font: inherit; }
-button { background: var(--green); color: white; border: 0; border-radius: 7px; padding: 11px 16px; cursor: pointer; margin: 5px 5px 5px 0; }
+
+button {
+  background: var(--green);
+  color: rgb(0, 0, 0);
+  border: 0;
+  border-radius: 7px;
+  padding: 11px 16px;
+  cursor: pointer;
+  margin: 5px 5px 5px 0;
+}
 button:hover { background: var(--green-dark); }
 button:disabled { opacity: .6; cursor: not-allowed; }
+
 h1 { color: var(--green); font-size: 32px; }
 h2 { margin-top: 30px; color: var(--green); }
 p, li { line-height: 1.6; }
 a { color: var(--green); }
 form { margin-top: 25px; }
 form h3 { margin-top: 25px; }
-textarea { width: 100%; padding: 10px; border: 1px solid #b9cbbd; border-radius: 7px; font: inherit; resize: vertical; }
-button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible { outline: 3px solid #d6a44f; outline-offset: 3px; }
-::selection { background: #d8e9d9; }
-@media (max-width: 600px) { h1 { font-size: 27px; } }
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  font: inherit;
+  resize: vertical;
+}
+
+input {
+  accent-color: var(--green);
+}
+
+button:focus-visible, input:focus-visible, textarea:focus-visible, a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+::selection { background: var(--green-soft); }
+
+@media (max-width: 600px) {
+  h1 { font-size: 27px; }
+}
