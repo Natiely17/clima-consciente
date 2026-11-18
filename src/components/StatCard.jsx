@@ -1,10 +1,11 @@
 import React from 'react';
+import styles from './StatCard.module.css';
 
 function StatCard({ titulo, valor }) {
   return (
-    <div className="cartao">
+    <div className={styles.cartao}>
       <p>{titulo}</p>
-      <h2>{valor}</h2>
+      <h2 className={styles.valor}>{valor}</h2>
     </div>
   );
 }

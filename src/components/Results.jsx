@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase.js';
 import { THEME, HEAT_OPTIONS } from '../data/theme.js';
 import StatCard from './StatCard.jsx';
+import styles from './Results.module.css';
 
 function Results() {
   const [respostas, setRespostas] = useState([]);
@@ -48,11 +49,11 @@ function Results() {
   return (
     <section>
       <h1>Respostas da pesquisa</h1>
-      {mensagem && <p className="mensagem">{mensagem}</p>}
+      {mensagem && <p className={styles.mensagem}>{mensagem}</p>}
 
       {!mensagem && (
         <>
-          <div className="cartoes">
+          <div className={styles.cartoes}>
             <StatCard titulo="Respostas recebidas" valor={total} />
             <StatCard titulo="Média de impacto" valor={media} />
             <StatCard titulo="Comentários" valor={comentarios.length} />
@@ -66,7 +67,7 @@ function Results() {
 
           <h2>Sugestões dos estudantes</h2>
           {comentarios.length === 0 && <p>Ainda não há comentários.</p>}
-          {comentarios.map((item) => <p className="comentario" key={item.id}>“{item.resposta_3}”</p>)}
+          {comentarios.map((item) => <p className={styles.comentario} key={item.id}>“{item.resposta_3}”</p>)}
         </>
       )}
 

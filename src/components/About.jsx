@@ -1,10 +1,11 @@
 import React from 'react';
 import { SOURCES } from '../data/theme.js';
+import styles from './About.module.css';
 
 function About({ irParaFormulario }) {
   return (
     <section>
-      <p className="destaque">O CLIMA ESTÁ MUDANDO. E A NOSSA ROTINA?</p>
+      <p className={styles.destaque}>O CLIMA ESTÁ MUDANDO. E A NOSSA ROTINA?</p>
       <h1>O calor que sentimos também conta uma história.</h1>
       <p>Esta página apresenta uma pesquisa sobre mudanças climáticas e a sensação de calor no dia a dia.</p>
       <button onClick={irParaFormulario}>Responder à pesquisa</button>
@@ -27,7 +28,7 @@ function About({ irParaFormulario }) {
           <li key={fonte.url}><a href={fonte.url} target="_blank" rel="noreferrer">{fonte.name}</a></li>
         ))}
       </ul>
-      <p className="aviso">A pesquisa mostra a opinião dos estudantes. Ela não mede a temperatura de Araraquara.</p>
+      <p className={styles.aviso}>A pesquisa mostra a opinião dos estudantes. Ela não mede a temperatura de Araraquara.</p>
     </section>
   );
 }

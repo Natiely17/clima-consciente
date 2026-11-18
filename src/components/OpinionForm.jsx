@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase.js';
 import { THEME, HEAT_OPTIONS } from '../data/theme.js';
+import styles from './OpinionForm.module.css';
 
 function OpinionForm() {
   const [calor, setCalor] = useState('');
@@ -59,7 +60,7 @@ function OpinionForm() {
       <form onSubmit={enviarResposta}>
         <h3>1. Você sente que o calor em Araraquara mudou nos últimos anos?</h3>
         {HEAT_OPTIONS.map((opcao) => (
-          <label className="resposta" key={opcao}>
+          <label className={styles.resposta} key={opcao}>
             <input type="radio" name="calor" value={opcao} checked={calor === opcao} onChange={(e) => setCalor(e.target.value)} />
             {opcao}
           </label>
@@ -67,7 +68,7 @@ function OpinionForm() {
 
         <h3>2. De 1 a 5, quanto as mudanças climáticas afetam sua rotina?</h3>
         {[1, 2, 3, 4, 5].map((numero) => (
-          <label className="nota" key={numero}>
+          <label className={styles.nota} key={numero}>
             <input type="radio" name="nota" value={numero} checked={nota === String(numero)} onChange={(e) => setNota(e.target.value)} />
             {numero}
           </label>
@@ -80,7 +81,7 @@ function OpinionForm() {
         <button type="submit" disabled={enviando}>{enviando ? 'Enviando...' : 'Enviar resposta'}</button>
       </form>
 
-      {mensagem && <p className="mensagem">{mensagem}</p>}
+      {mensagem && <p className={styles.mensagem}>{mensagem}</p>}
     </section>
   );
 }

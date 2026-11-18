@@ -1,0 +1,3 @@
+.mensagem { background: var(--green-soft); padding: 12px; border-radius: 7px; }
+.cartoes { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+.comentario { background: var(--page); padding: 12px; border-radius: 7px; }

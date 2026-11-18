@@ -1,6 +1,6 @@
 
 .header {
-  background: white;
+  background: var(--paper);
   padding: 18px 7%;
   display: flex;
   justify-content: space-between;
@@ -15,10 +15,13 @@
   min-height: 75vh;
   margin: 35px auto;
   padding: 25px;
-  background: white;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
   border-radius: 12px;
 }
 .footer { text-align: center; padding: 20px; color: var(--muted); }
+.botaoTema { white-space: nowrap; }
 @media (max-width: 600px) {
   .header { display: block; }
   .main { margin: 15px; padding: 18px; }
